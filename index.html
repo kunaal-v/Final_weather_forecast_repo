@@ -3,19 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Weather</title>
+    <link rel="stylesheet" href="input.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-    <div>
+    <h1>Weather Forecast</h1>
+    <div class="Weather">
         <!-- search system -->
-        <div></div>
+        <div class="search_system">
+            <h3>Enter City Name</h3>
+            <input type="text" class="search_input">
+            <button type="button" class=" btn search_btn"> Search</button>
+            <button type="button" class=" btn current_location_btn">Current Location</button>
+        </div>
         <!-- show temp -->
-        <div></div>
+        <div class="Show_temp">
+            <div>
+                <h3>Today's Weather</h3>
+                <p>Temprature:</p>
+                <p> Wind: </p>
+                <p> humidity:</p>
+            </div>
+            <div>
+                <img src="" alt="Weather_icon">
+            </div>
+            
+        </div>
         <!-- recent search -->
-        <div></div>
+        <div class="recent_search">
+             <div class="recent">
+                <label for="cars">Recent searches:</label>
+                <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                  </select>
+             </div>
+        </div>
         <!-- 5 days forecast -->
-        <div></div>
+        <div class="Five_day_forecast">
+            <div class="Forecasts">
+                <div class="cast1">
+                        <p>Temprature:</p>
+                        <img src="" alt="Weather_icon">
+                        <p> Wind: </p>
+                        <p> humidity:</p>                   
+                </div>
+                <div class="cast2">
+                        <p>Temprature:</p>
+                        <img src="" alt="Weather_icon">
+                        <p> Wind: </p>
+                        <p> humidity:</p>                   
+                </div>
+                <div class="cast3">
+                        <p>Temprature:</p>
+                        <img src="" alt="Weather_icon">
+                        <p> Wind: </p>
+                        <p> humidity:</p>                   
+                </div>
+                <div class="cast4">
+                        <p>Temprature:</p>
+                        <img src="" alt="Weather_icon">
+                        <p> Wind: </p>
+                        <p> humidity:</p>
+                </div><div class="cast5">
+                        <p>Temprature:</p>
+                        <img src="" alt="Weather_icon">
+                        <p> Wind: </p>
+                        <p> humidity:</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

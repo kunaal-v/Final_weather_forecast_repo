@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.search_system{grid-area: "search";}
+.Show_temp{grid-area: "temp";}
+.recent_search{grid-area: "recent";}
+.Five_day_forecast{grid-area: "fiveday";}
+.Weather{
+    display: grid;
+    grid-template-columns: 30% 69%;
+    grid-template-areas: "search temp" "recent fiveday";
+    gap: 10px;
+    margin: 10px;
+    
+}
+h1{
+    width: 100vw;
+    background-color: rgb(226, 62, 62);
+    color: white;
+    text-align: center;
+}
+.search_system{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+.search_input{
+    height: 30px;
+    width: 300px;
+}
+.btn{
+    height: 25px;
+    width: 300px;
+}
+.search_btn{
+    background-color: rgb(226, 62, 62);
+    color: white;
+    font-weight: bolder;
+}
+.search_btn:hover{
+    background-color: white;
+    color: rgb(226, 62, 62);
+}
+.current_location_btn{
+    background-color: rgb(22, 123, 223);
+    color: white;
+    font-weight: bolder;
+}
+.current_location_btn:hover{
+    background-color: white;
+    color: black;
+}
+.Show_temp{
+     background-color: rgb(26, 86, 237);
+     display: grid;
+     grid-template-columns: 80% 20%;
+     padding: 20px;
+}
+.recent_search{
+    display: flex;
+    
+}
+.recent{
+    
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+}
+.Forecasts{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: "1 2 3 4 5";
+    gap: 5px;
+    overflow: hidden;
+}
+.cast1{
+    background-color: red;
+    height: 200px;
+    padding: 10px;
+    grid-area: "1";
+}
+.cast2{
+    background-color: red;
+    padding: 10px;
+    grid-area: "2";
+}.cast3{
+    background-color: red;
+    padding: 10px;
+    grid-area: "3";
+}.cast4{
+    background-color: red;
+    padding: 10px;
+    grid-area: "4";
+}.cast5{
+    background-color: red;
+    padding: 10px;
+    grid-area: "5";
+}
