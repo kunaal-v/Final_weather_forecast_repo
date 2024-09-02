@@ -54,3 +54,28 @@ search_btn.addEventListener("click",(e)=>{
 });
 
 
+async function getcurrentweather(lat,lon){
+    const fetched=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=636c2583cd189bfd05ef259fa65bba19&units=metric`);
+
+    const result= await fetched.json();
+    console.log(result);
+    if(result.cod=="404"){
+        alert(result.message);
+        return;
+    }
+    const city=result.name;
+    getweather(city);
+}
+current_location_btn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((position)=>{
+            const lat=position.coords.latitude;
+            const lon=position.coords.longitude;
+            getcurrentweather(lat,lon);
+        },(error)=>{
+            console.log(error.message);
+        })
+    }  
+}
+)
