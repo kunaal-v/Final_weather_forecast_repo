@@ -12,40 +12,187 @@ async function getweather(city){
         alert(result.message);
         return;
     }
+    for(let i=0, j=0;i<result.list.length;i=i+8,j++){
 
-    const temp=document.querySelector(".temp");
-    const wind=document.querySelector(".wind");
-    const humidity=document.querySelector(".humidity");
-    const datetime=document.querySelector(".date");
-    const img=document.querySelector(".img");
+        const temprature=result.list[i].main.temp;
+        const windSpeed=result.list[i].wind.speed;
+        const Humidity=result.list[i].main.humidity;
+        const dateTime=result.list[i].dt_txt;
+        const date=dateTime.split(' ');
+        const weatherimg=result.list[i].weather[0].main;
+        
 
-    const temprature=result.list[0].main.temp;
-    const windSpeed=result.list[0].wind.speed;
-    const Humidity=result.list[0].main.humidity;
-    const dateTime=result.list[0].dt_txt;
-    const date=dateTime.split(' ');
-    const weatherimg=result.list[0].weather[0].main;
+        if(i==0){
+            const temp=document.querySelector(".temp");
+            const wind=document.querySelector(".wind");
+            const humidity=document.querySelector(".humidity");
+            const datetime=document.querySelector(".date");
+            const img=document.querySelector(".img");
 
-    temp.innerHTML=`Temprature: ${temprature}° C`;
-    wind.innerHTML=`Wind Speed: ${windSpeed}km/h `;
-    humidity.innerHTML=`Humidity: ${Humidity}%`;
-    datetime.innerHTML=`${date[0]}`;
-    if(weatherimg=="Clouds"){
-        img.src="./images/clouds.png";
-    }
-    else if(weatherimg=="Rain"){
-        img.src="./images/rain.png";
-    }
-    else if(weatherimg=="Clear"){
-        img.src="./images/clear.png";
-    }
-    else if(weatherimg=="Mist"){
-        img.src="./images/mist.png";
-    }
-    else if(weatherimg=="Drizzle"){
-        img.src="./images/drizzle.png";
-    }
+            temp.innerHTML=`Temprature: ${temprature}° C`;
+            wind.innerHTML=`Wind Speed: ${windSpeed}km/h `;
+            humidity.innerHTML=`Humidity: ${Humidity}%`;
+            datetime.innerHTML=`${date[0]}`;
+            if(weatherimg=="Clouds"){
+                img.src="./images/clouds.png";
+            }
+            else if(weatherimg=="Rain"){
+                img.src="./images/rain.png";
+            }
+            else if(weatherimg=="Clear"){
+                img.src="./images/clear.png";
+            }
+            else if(weatherimg=="Mist"){
+                img.src="./images/mist.png";
+            }
+            else if(weatherimg=="Drizzle"){
+                img.src="./images/drizzle.png";
+            }
+        }
+        if(i==8){
+            const temp=document.querySelector(".temp1");
+            const wind=document.querySelector(".wind1");
+            const humidity=document.querySelector(".humidity1");
+            const datetime=document.querySelector(".date1");
+            const img=document.querySelector(".img1");
 
+            temp.innerHTML=`Temprature: ${temprature}° C`;
+            wind.innerHTML=`Wind Speed: ${windSpeed}km/h `;
+            humidity.innerHTML=`Humidity: ${Humidity}%`;
+            datetime.innerHTML=`${date[0]}`;
+            if(weatherimg=="Clouds"){
+                img.src="./images/clouds.png";
+            }
+            else if(weatherimg=="Rain"){
+                img.src="./images/rain.png";
+            }
+            else if(weatherimg=="Clear"){
+                img.src="./images/clear.png";
+            }
+            else if(weatherimg=="Mist"){
+                img.src="./images/mist.png";
+            }
+            else if(weatherimg=="Drizzle"){
+                img.src="./images/drizzle.png";
+            }
+        }  
+        if(i==16){
+            const temp=document.querySelector(".temp2");
+            const wind=document.querySelector(".wind2");
+            const humidity=document.querySelector(".humidity2");
+            const datetime=document.querySelector(".date2");
+            const img=document.querySelector(".img2");
+
+            temp.innerHTML=`Temprature: ${temprature}° C`;
+            wind.innerHTML=`Wind Speed: ${windSpeed}km/h `;
+            humidity.innerHTML=`Humidity: ${Humidity}%`;
+            datetime.innerHTML=`${date[0]}`;
+            if(weatherimg=="Clouds"){
+                img.src="./images/clouds.png";
+            }
+            else if(weatherimg=="Rain"){
+                img.src="./images/rain.png";
+            }
+            else if(weatherimg=="Clear"){
+                img.src="./images/clear.png";
+            }
+            else if(weatherimg=="Mist"){
+                img.src="./images/mist.png";
+            }
+            else if(weatherimg=="Drizzle"){
+                img.src="./images/drizzle.png";
+            }
+        }
+        if(i==24){
+            const temp=document.querySelector(".temp3");
+            const wind=document.querySelector(".wind3");
+            const humidity=document.querySelector(".humidity3");
+            const datetime=document.querySelector(".date3");
+            const img=document.querySelector(".img3");
+
+            temp.innerHTML=`Temprature: ${temprature}° C`;
+            wind.innerHTML=`Wind Speed: ${windSpeed}km/h `;
+            humidity.innerHTML=`Humidity: ${Humidity}%`;
+            datetime.innerHTML=`${date[0]}`;
+            if(weatherimg=="Clouds"){
+                img.src="./images/clouds.png";
+            }
+            else if(weatherimg=="Rain"){
+                img.src="./images/rain.png";
+            }
+            else if(weatherimg=="Clear"){
+                img.src="./images/clear.png";
+            }
+            else if(weatherimg=="Mist"){
+                img.src="./images/mist.png";
+            }
+            else if(weatherimg=="Drizzle"){
+                img.src="./images/drizzle.png";
+            }
+        }
+        if(i==32){
+            const temp=document.querySelector(".temp4");
+            const wind=document.querySelector(".wind4");
+            const humidity=document.querySelector(".humidity4");
+            const datetime=document.querySelector(".date4");
+            const img=document.querySelector(".img4");
+
+            temp.innerHTML=`Temprature: ${temprature}° C`;
+            wind.innerHTML=`Wind Speed: ${windSpeed}km/h `;
+            humidity.innerHTML=`Humidity: ${Humidity}%`;
+            datetime.innerHTML=`${date[0]}`;
+            if(weatherimg=="Clouds"){
+                img.src="./images/clouds.png";
+            }
+            else if(weatherimg=="Rain"){
+                img.src="./images/rain.png";
+            }
+            else if(weatherimg=="Clear"){
+                img.src="./images/clear.png";
+            }
+            else if(weatherimg=="Mist"){
+                img.src="./images/mist.png";
+            }
+            else if(weatherimg=="Drizzle"){
+                img.src="./images/drizzle.png";
+            }
+        }
+        if(j==4){
+            const temp=document.querySelector(".temp5");
+            const wind=document.querySelector(".wind5");
+            const humidity=document.querySelector(".humidity5");
+            const datetime=document.querySelector(".date5");
+            const img=document.querySelector(".img5");
+
+            const temprature=result.list[39].main.temp;
+            const windSpeed=result.list[39].wind.speed;
+            const Humidity=result.list[39].main.humidity;
+            const dateTime=result.list[39].dt_txt;
+            const date=dateTime.split(' ');
+            const weatherimg=result.list[39].weather[0].main;
+
+            temp.innerHTML=`Temprature: ${temprature}° C`;
+            wind.innerHTML=`Wind Speed: ${windSpeed}km/h `;
+            humidity.innerHTML=`Humidity: ${Humidity}%`;
+            datetime.innerHTML=`${date[0]}`;
+            if(weatherimg=="Clouds"){
+                img.src="./images/clouds.png";
+            }
+            else if(weatherimg=="Rain"){
+                img.src="./images/rain.png";
+            }
+            else if(weatherimg=="Clear"){
+                img.src="./images/clear.png";
+            }
+            else if(weatherimg=="Mist"){
+                img.src="./images/mist.png";
+            }
+            else if(weatherimg=="Drizzle"){
+                img.src="./images/drizzle.png";
+            }
+        }          
+    }
+    
 }
 search_btn.addEventListener("click",(e)=>{
     const city =document.querySelector(".search_input");

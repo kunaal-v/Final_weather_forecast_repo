@@ -3,17 +3,22 @@
     padding:0;
     box-sizing: border-box;
 }
+body{
+    overflow-x:hidden;
+    overflow-y: hidden;
+}
 .search_system{grid-area: "search";}
 .Show_temp{grid-area: "temp";}
 .recent_search{grid-area: "recent";}
 .Five_day_forecast{grid-area: "fiveday";}
 .Weather{
     display: grid;
-    grid-template-columns: 30% 69%;
+    grid-template-columns: 30% 70%;
     grid-template-areas: "search temp" "recent fiveday";
     gap: 10px;
     margin: 10px;
-    
+    height: 90vh;
+    width: 98vw; 
 }
 h1{
     width: 100vw;
@@ -55,14 +60,20 @@ h1{
     color: black;
 }
 .Show_temp{
-     background-color: rgb(26, 86, 237);
+     
+     border: 2px solid red;
+     box-shadow: rgb(224, 219, 219) 1px 1px 20px 1px;;
      display: grid;
      grid-template-columns: 80% 20%;
      padding: 20px;
 }
 .recent_search{
     display: flex;
-    
+    border: 2px solid red;
+    box-shadow: rgb(224, 219, 219) 1px 1px 5px 1px;;
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
 }
 .recent{
     
@@ -72,31 +83,52 @@ h1{
 }
 .Forecasts{
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-areas: "1 2 3 4 5";
-    gap: 5px;
+    grid-template-columns: 33% 33% 32%;
+    grid-template-areas: "1 2 3","4 5";
+    gap: 20px;
     overflow: hidden;
+    margin-top: 20px;
 }
 .cast1{
-    background-color: red;
+    box-shadow: red 0.5px 0.5px 5px 1px;
     height: 200px;
     padding: 10px;
+    width: 300px;
     grid-area: "1";
+    margin: 5px;
 }
 .cast2{
-    background-color: red;
+    box-shadow: red 0.5px 0.5px 5px 1px;
+    height: 200px;
     padding: 10px;
+    width: 300px;
     grid-area: "2";
+    margin: 5px;
 }.cast3{
-    background-color: red;
+    box-shadow: red 0.5px 0.5px 5px 1px;
+    height: 200px;
     padding: 10px;
+    width: 300px;
     grid-area: "3";
+    margin: 5px;
 }.cast4{
-    background-color: red;
+    box-shadow: red 0.5px 0.5px 5px 1px;
+    height: 200px;
     padding: 10px;
+    width: 300px;
     grid-area: "4";
+    margin: 5px;
 }.cast5{
-    background-color: red;
+    box-shadow: red 0.5px 0.5px 5px 1px;
+    height: 200px;
     padding: 10px;
+    width: 300px;
     grid-area: "5";
+    margin: 5px;
+}
+.date{
+    background-color: rgb(26, 86, 237);
+    color: white;
+    padding: 5px;
+    font-weight: bold;
 }
