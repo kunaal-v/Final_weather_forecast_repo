@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    overflow-x:hidden;
-    overflow-y: hidden;
+    height: 100vh;
     
 }
 .search_system{grid-area: "search";}
@@ -18,7 +17,7 @@ body{
     grid-template-areas: "search temp" "recent fiveday";
     gap: 10px;
     margin: 10px;
-    height: 90vh;
+    height: 100vh;
     width: 98vw; 
     
 }
@@ -134,4 +133,94 @@ h1{
     color: white;
     padding: 5px;
     font-weight: bold;
+}
+
+/* media query for ipad mini */
+@media screen and (max-width: 1024px) and (min-width: 768px){
+    .search_system{grid-area: 1/1/2/2;}
+    .Show_temp{grid-area: 2/1/3/3;}
+    .recent_search{grid-area: 1/2/2/3;}
+    .Five_day_forecast{grid-area: 3/1/4/3;}
+    .Weather{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 30px;
+        margin: 10px;
+        height: 100%;
+        width: 98vw; 
+        padding: 10px;
+        
+    }
+    .recent_search{
+        display: flex;
+        visibility: hidden;
+        border: 2px solid red;
+        box-shadow: rgb(224, 219, 219) 1px 1px 5px 1px;;
+        height:fit-content;
+        width:100%;
+        margin-left: 1px;
+        margin-top: 50px;
+    }
+    .recent{
+        height: 100px;
+        width: 100%;
+        padding: 10px;
+    }
+    .Forecasts{
+        display: grid;
+        
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "1 2"
+        " 3 4" 
+        "5";
+        gap: 10px;
+        overflow: hidden;
+        margin-top: 20px;
+    }
+}
+
+/* media query for iphone se */
+@media screen and (max-width: 667px) and (min-width: 375px){
+    .search_system{grid-area: 1/1/2/2;}
+    .recent_search{grid-area: 2/1/3/2;}
+    .Show_temp{grid-area: 3/1/4/2;}
+    .Five_day_forecast{grid-area: 4/1/5/2;}
+    .Weather{
+        display: grid;
+        grid-template-columns: auto;
+        gap: 25px;
+        margin: 10px;
+        height: 100vh;
+        width: 98vw; 
+    }
+    .recent_search{
+        display: flex;
+        visibility: hidden;
+        border: 2px solid red;
+        box-shadow: rgb(224, 219, 219) 1px 1px 5px 1px;;
+        height:fit-content;
+        width:95vw;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    .recent{
+        height: 100px;
+        width: 100%;
+        padding: 10px;
+    }
+    .Forecasts{
+        display: grid;
+        
+        grid-template-columns: 100%;
+        grid-template-areas: "1"" 2" " 3"" 4" "5";
+        gap: 5px;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .Show_temp{
+        display: grid;
+        grid-template-columns: 60% 40%;
+        padding: 10px;
+   }
 }
