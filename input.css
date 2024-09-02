@@ -71,14 +71,15 @@ h1{
 }
 .recent_search{
     display: flex;
+    visibility: hidden;
     border: 2px solid red;
     box-shadow: rgb(224, 219, 219) 1px 1px 5px 1px;;
-    height: 200px;
+    height:fit-content;
     width: 200px;
     margin-left: 100px;
 }
 .recent{
-    
+
     height: 100px;
     width: 100%;
     padding: 10px;

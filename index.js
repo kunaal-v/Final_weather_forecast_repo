@@ -1,8 +1,60 @@
-
+sessionStorage.setItem("city","city");
 const search_btn=document.querySelector(".search_btn");
 const current_location_btn=document.querySelector(".current_location_btn");
 console.log(search_btn);
 console.log(current_location_btn);
+function getlsdata(){
+        
+        console.log(localStorage.getItem("city"));
+        if(localStorage.getItem("city")===null){
+            console.log("local storage is null");
+            
+        }
+        else{
+            const dd1=document.querySelector(".dd1");
+            const dd2=document.querySelector(".dd2");
+            const dd3=document.querySelector(".dd3");
+            const dd4=document.querySelector(".dd4");
+
+            console.log("local storage is not null");
+            dd1.innerHTML=localStorage.getItem("city");
+            const recent=document.querySelector(".recent_search");
+            recent.style.visibility="inherit";
+            dd2.innerHTML=localStorage.getItem("city1");
+            dd3.innerHTML=localStorage.getItem("city11");
+            dd4.innerHTML=localStorage.getItem("city111");  }          
+}
+getlsdata();
+
+function ls(city){
+    let  key=sessionStorage.getItem("city");
+    if(key=="city1111"){
+        sessionStorage.setItem("city","city");
+        key="city";
+    }
+    let value=key+"1";
+    sessionStorage.setItem("city",value);
+    localStorage.setItem(key,city);
+    const dd1=document.querySelector(".dd1");
+    const dd2=document.querySelector(".dd2");
+    const dd3=document.querySelector(".dd3");
+    const dd4=document.querySelector(".dd4");
+    if(key=="city"){
+        dd1.innerHTML=localStorage.getItem(key);
+        const recent=document.querySelector(".recent_search");
+        recent.style.visibility="inherit" ;
+    }
+    if(key=="city1"){
+        dd2.innerHTML=localStorage.getItem(key);
+    }
+    if(key=="city11"){
+        dd3.innerHTML=localStorage.getItem(key);
+    }
+    if(key=="city111"){
+        dd4.innerHTML=localStorage.getItem(key);
+    }
+}
+
 async function getweather(city){ 
     if(city==""){
         alert("Please Enter city name");
@@ -19,6 +71,8 @@ async function getweather(city){
         alert(result.message);
         return;
     }
+    
+    ls(city);
     for(let i=0, j=0;i<result.list.length;i=i+8,j++){
 
         const temprature=result.list[i].main.temp;
@@ -202,9 +256,10 @@ async function getweather(city){
     
 }
 search_btn.addEventListener("click",(e)=>{
-    const city =document.querySelector(".search_input");
-    getweather(city.value);
     e.preventDefault();
+    const city =document.querySelector(".search_input");
+    getweather(city.value,e);
+    city.innerHTML="";
 });
 
 
