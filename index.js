@@ -4,6 +4,13 @@ const current_location_btn=document.querySelector(".current_location_btn");
 console.log(search_btn);
 console.log(current_location_btn);
 async function getweather(city){ 
+    if(city==""){
+        alert("Please Enter city name");
+        return;
+    }
+    if(!navigator.onLine){
+        alert("Kindly check your Network Connection!...")
+    }
     const url=`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=636c2583cd189bfd05ef259fa65bba19&units=metric`;
     const fetched= await fetch(url);
     const result= await fetched.json();

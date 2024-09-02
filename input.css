@@ -6,6 +6,7 @@
 body{
     overflow-x:hidden;
     overflow-y: hidden;
+    
 }
 .search_system{grid-area: "search";}
 .Show_temp{grid-area: "temp";}
@@ -19,6 +20,7 @@ body{
     margin: 10px;
     height: 90vh;
     width: 98vw; 
+    
 }
 h1{
     width: 100vw;
