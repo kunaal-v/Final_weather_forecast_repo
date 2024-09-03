@@ -6,22 +6,23 @@
     <title>Weather</title>
     <link rel="stylesheet" href="input.css">
     <script src="index.js" defer></script>
+    <link href="./output.css" rel="stylesheet">
 </head>
 <body>
     <h1>Weather Forecast</h1>
     <div class="Weather">
         <!-- search system -->
         <div class="search_system">
-            <h3>Enter City Name</h3>
+            <h3 class="font-bold">Enter City Name</h3>
             <form action="">
-                <input type="text" name="city" id="city" class="search_input" placeholder="Search by city name"><br><br>
+                <input type="text" name="city" id="city" class="search_input border-solid border-2 border-black " placeholder="Search by city name"><br><br>
                 <button type="button" class=" btn search_btn"> Search</button><br><br>
                 <button type="button" class=" btn current_location_btn">Current Location</button>
             </form>
            
         </div>
         <!-- show temp -->
-        <div class="Show_temp">
+        <div class="Show_temp bg-slate-50">
             <div>
                 <h3>Today's Weather <p class="date"></p></h3>
                 <p class="temp">Temprature:</p>
@@ -34,7 +35,7 @@
             
         </div>
         <!-- recent search -->
-        <div class="recent_search">
+        <div class="recent_search bg-slate-50">
              <div class="recent">
                 <label for="city">Recent searches:</label>
                 <select name="city" id="city">
@@ -49,34 +50,34 @@
         <div class="Five_day_forecast">
             <h3 style="text-align: center; background-color: rgb(226, 62, 62);; color: white; border: 1px solid black;">5-Days Forecast</h3>
             <div class="Forecasts">
-                <div class="cast1">
+                <div class="cast1 bg-slate-50">
                         <p class="date date1">Date</p>
                         <p class="temp1">Temprature:</p>
                         <img class="img1" src="./images/clear.png" alt="Weather_icon" height="40px" width="40px">
                         <p class="wind1"> Wind: </p>
                         <p class="humidity1"> humidity:</p>                   
                 </div>
-                <div class="cast2">
+                <div class="cast2 bg-slate-50">
                         <p class="date date2">Date</p>
                         <p class="temp2">Temprature:</p>
                         <img class="img2" src="./images/clear.png" alt="Weather_icon" height="40px" width="40px">
                         <p class="wind2"> Wind: </p>
                         <p class="humidity2"> humidity:</p>                   
                 </div>
-                <div class="cast3">
+                <div class="cast3 bg-slate-50">
                         <p class="date date3">Date</p>
                         <p class="temp3">Temprature:</p>
                         <img class="img3" src="./images/clear.png" alt="Weather_icon" height="40px" width="40px">
                         <p class="wind3"> Wind: </p>
                         <p class="humidity3"> humidity:</p>                   
                 </div>
-                <div class="cast4">
+                <div class="cast4 bg-slate-50">
                         <p class="date date4">Date</p>
                         <p class="temp4">Temprature:</p>
                         <img class="img4" src="./images/clear.png" alt="Weather_icon" height="40px" width="40px">
                         <p class="wind4"> Wind: </p>
                         <p class="humidity4"> humidity:</p>
-                </div><div class="cast5">
+                </div><div class="cast5 bg-slate-50">
                         <p class="date date5">Date</p>
                         <p class="temp5">Temprature:</p>
                         <img class="img5" src="./images/clear.png" alt="Weather_icon" height="40px" width="40px">

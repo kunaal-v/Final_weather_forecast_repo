@@ -1,15 +1,17 @@
+//setting the session storage key and value to city.
 sessionStorage.setItem("city","city");
+//get the referance of input field and search button.
 const search_btn=document.querySelector(".search_btn");
 const current_location_btn=document.querySelector(".current_location_btn");
-console.log(search_btn);
-console.log(current_location_btn);
+//make a function get the data from local storage when the website opens.
+// if the local storage is empty the dropdown will not appear.
 function getlsdata(){
-        
-        console.log(localStorage.getItem("city"));
+        //check for local storage is empty or not
         if(localStorage.getItem("city")===null){
             console.log("local storage is null");
             
         }
+        //will run if storage is not empty
         else{
             const dd1=document.querySelector(".dd1");
             const dd2=document.querySelector(".dd2");
@@ -26,6 +28,7 @@ function getlsdata(){
 }
 getlsdata();
 
+// make a function when we searched for a city it will store in the local storage and also update the dropdown menu of recent search
 function ls(city){
     let  key=sessionStorage.getItem("city");
     if(key=="city1111"){
@@ -35,10 +38,12 @@ function ls(city){
     let value=key+"1";
     sessionStorage.setItem("city",value);
     localStorage.setItem(key,city);
+    //get the referance of dropdowns 
     const dd1=document.querySelector(".dd1");
     const dd2=document.querySelector(".dd2");
     const dd3=document.querySelector(".dd3");
     const dd4=document.querySelector(".dd4");
+    //update the dropdown accordingly
     if(key=="city"){
         dd1.innerHTML=localStorage.getItem(key);
         const recent=document.querySelector(".recent_search");
@@ -54,27 +59,32 @@ function ls(city){
         dd4.innerHTML=localStorage.getItem(key);
     }
 }
-
+//function to getch data from api and update the 5 days forecast and today's temp
 async function getweather(city){ 
+    //if input field is empty it will show the alret message and return from the function
     if(city==""){
         alert("Please Enter city name");
         return;
     }
+    //it will check the internet connection. 
     if(!navigator.onLine){
         alert("Kindly check your Network Connection!...")
     }
+    // it will fetch the data from api
     const url=`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=636c2583cd189bfd05ef259fa65bba19&units=metric`;
     const fetched= await fetch(url);
     const result= await fetched.json();
     console.log(result);
+    //if data is fetched it will return the message.
     if(result.cod=="404"){
         alert(result.message);
         return;
     }
-    
+    // calling function to store data in the local storage and update the dropdown menu
     ls(city);
+    //using for loop to get all the data(i.e. today's temp and 5-day forecast)
     for(let i=0, j=0;i<result.list.length;i=i+8,j++){
-
+        // assigning fetched data to the variables
         const temprature=result.list[i].main.temp;
         const windSpeed=result.list[i].wind.speed;
         const Humidity=result.list[i].main.humidity;
@@ -82,7 +92,7 @@ async function getweather(city){
         const date=dateTime.split(' ');
         const weatherimg=result.list[i].weather[0].main;
         
-
+        // it will store the data as today's temp
         if(i==0){
             const temp=document.querySelector(".temp");
             const wind=document.querySelector(".wind");
@@ -110,6 +120,7 @@ async function getweather(city){
                 img.src="./images/drizzle.png";
             }
         }
+        // next 1st day
         if(i==8){
             const temp=document.querySelector(".temp1");
             const wind=document.querySelector(".wind1");
@@ -137,6 +148,7 @@ async function getweather(city){
                 img.src="./images/drizzle.png";
             }
         }  
+        //2nd day
         if(i==16){
             const temp=document.querySelector(".temp2");
             const wind=document.querySelector(".wind2");
@@ -164,6 +176,7 @@ async function getweather(city){
                 img.src="./images/drizzle.png";
             }
         }
+        //3rd day
         if(i==24){
             const temp=document.querySelector(".temp3");
             const wind=document.querySelector(".wind3");
@@ -191,6 +204,7 @@ async function getweather(city){
                 img.src="./images/drizzle.png";
             }
         }
+        //4th day
         if(i==32){
             const temp=document.querySelector(".temp4");
             const wind=document.querySelector(".wind4");
@@ -218,6 +232,7 @@ async function getweather(city){
                 img.src="./images/drizzle.png";
             }
         }
+        //5th day
         if(j==4){
             const temp=document.querySelector(".temp5");
             const wind=document.querySelector(".wind5");
@@ -255,32 +270,41 @@ async function getweather(city){
     }
     
 }
+// addEventLister to search button
 search_btn.addEventListener("click",(e)=>{
     e.preventDefault();
     const city =document.querySelector(".search_input");
+    //calling the function to fetch the data
     getweather(city.value,e);
-    city.innerHTML="";
+
 });
 
-
+//make a function to get data of current location
 async function getcurrentweather(lat,lon){
+    // fetching the data from api
     const fetched=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=636c2583cd189bfd05ef259fa65bba19&units=metric`);
 
     const result= await fetched.json();
     console.log(result);
+    // it faild to fetch the data will show alert message and return
     if(result.cod=="404"){
         alert(result.message);
         return;
     }
+    //get the city from fetched data
     const city=result.name;
+    // calling the function to get the data by city name.
     getweather(city);
 }
+//addEventListner to Current location button
 current_location_btn.addEventListener("click",(e)=>{
     e.preventDefault();
+    //get the longitude and latitude of the current location
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition((position)=>{
             const lat=position.coords.latitude;
             const lon=position.coords.longitude;
+            //calling the function with latitude and logitude.
             getcurrentweather(lat,lon);
         },(error)=>{
             console.log(error.message);
